@@ -191,8 +191,8 @@ class EmailSender:
             self.subject_template = file.readline().strip() # get subject
             self.email_body_template = "".join(file.readlines()[1:]) # get email body
 
-        with open("./templates/signature") as file:
-            self.signature = file.read() # signature
+        # with open("./templates/signature") as file:
+        #     self.signature = file.read() # signature
 
         self.get_credentials()
 
@@ -221,7 +221,8 @@ class EmailSender:
                 subject = self.fill_variables(self.subject_template, variables)
 
                 sender = "admin@kossiitkgp.org"
-                email_content = email_body + self.signature
+                # email_content = email_body + self.signature
+                email_content = email_body
                 message = self.create_message(
                     sender, email, subject, email_content)
 
@@ -238,8 +239,8 @@ class EmailSender:
             self.template_file = self.template_file_entry.get()
         elif (frame == self.calendar_frame):
             self.template_file = self.template_file_entry_calendar.get()
-        with open("./templates/signature") as file:
-            self.signature = file.read()
+        # with open("./templates/signature") as file:
+        #     self.signature = file.read()
 
         with open(self.template_file, "r") as file:
             self.subject_template = file.readline().strip()
@@ -256,7 +257,8 @@ class EmailSender:
                 self.subject_template, self.csv_variables)
 
             sender = "admin@kossiitkgp.org"
-            email_content = email_body + self.signature
+            # email_content = email_body + self.signature
+            email_content = email_body
             message = self.create_message(
                 sender, email, subject, email_content)
             self.mail_frame = Tk()
