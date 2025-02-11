@@ -12,7 +12,7 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from templates.variable_mappings import variable_column_mapping
 from tkinter import *
-from tkhtmlview import HTMLLabel
+# from tkhtmlview import HTMLLabel
 from tkinterweb import HtmlFrame 
 
 
